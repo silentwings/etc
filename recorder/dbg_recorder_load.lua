@@ -320,8 +320,8 @@ function gadget:DrawScreen()
 end
 
 function Finished()
-    local version = Game.version 
-    local buildFlags = Game.buildFlags or ""
+    local version = Engine.version 
+    local buildFlags = Engine.buildFlags or ""
     local gameName = Game.gameName
     local gameVersion = Game.gameVersion
     Spring.Echo(white .. "Spring " .. version .. " (" .. buildFlags .. ")")
@@ -354,7 +354,7 @@ function Finished()
     
     CleanSamples()
     profile = false
-	startedFrame = nil
+	startFrame = nil
 end
 
 function Interrupt()
