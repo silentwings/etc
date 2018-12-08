@@ -301,6 +301,10 @@ end
 
 function gadget:DrawScreen()
     local frame = Spring.GetGameFrame()
+	if profile and not startedFrame then
+		startedFrame = frame
+	end
+	
     if profile and frame >= 15 + prevSampleFrame then --sample approx twice per second (of gametime)
         prevSampleFrame = frame
         local fps = Spring.GetFPS()
