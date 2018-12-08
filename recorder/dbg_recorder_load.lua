@@ -308,6 +308,7 @@ function gadget:DrawScreen()
         local _,curSpeed = Spring.GetGameSpeed()
         simSamples[#simSamples+1] = curSpeed
     end
+	
 end
 
 function Finished()
