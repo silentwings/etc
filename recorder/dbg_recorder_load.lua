@@ -293,7 +293,7 @@ local profile = false
 local fpsSamples = {}
 local simSamples = {}
 local prevSampleFrame = 0
-local startedFrame = 0
+local startedFrame = nil
 
 function Started()
     profile = true
@@ -309,6 +309,10 @@ function gadget:DrawScreen()
         simSamples[#simSamples+1] = curSpeed
     end
 	
+	if startedFrame then
+		seconds = math.floor((frame - startedFrame) / 30)
+		gl.Text("progress: " .. seconds .. "s", 300, 300, 12)
+	end
 end
 
 function Finished()
@@ -346,6 +350,7 @@ function Finished()
     
     CleanSamples()
     profile = false
+	startedFrame = nil
 end
 
 function Interrupt()
