@@ -354,7 +354,7 @@ function Finished()
     
     CleanSamples()
     profile = false
-	startFrame = nil
+	startedFrame = nil
 end
 
 function Interrupt()
